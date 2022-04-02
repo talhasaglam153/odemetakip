@@ -6,13 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_yeni_odeme_tipi"
         android:layout_width="wrap_content"
+        android:drawableEnd="@drawable/ic_add"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/custom_button_white"
+        android:text="Yeni ödeme tipi ekle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="391dp"
+        android:layout_height="801dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_yeni_odeme_tipi" />
+
+    <ImageView
+        android:id="@+id/iv_empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_yeni_odeme_tipi"
+        app:srcCompat="@drawable/empty_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>
