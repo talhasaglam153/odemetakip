@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         lm.orientation = LinearLayoutManager.VERTICAL
         binding.rv.layoutManager = lm
 
-       /* var o1 = OdemeTipi()
+        var o1 = OdemeTipi()
         var o2 = OdemeTipi()
         var o3 = OdemeTipi()
 
@@ -32,8 +32,30 @@ class MainActivity : AppCompatActivity() {
 
         tipListe.add(o1)
         tipListe.add(o2)
-        tipListe.add(o3)*/
+        tipListe.add(o3)
+        var o4 = OdemeTipi()
+        var o5 = OdemeTipi()
+        var o6 = OdemeTipi()
 
+        o4.baslik = "Elektrik Faturasi"
+        o5.baslik = "Su Faturasi"
+        o6.baslik = "Kira"
+
+        tipListe.add(o4)
+        tipListe.add(o5)
+        tipListe.add(o6)
+
+        var o7 = OdemeTipi()
+        var o8 = OdemeTipi()
+        var o9 = OdemeTipi()
+
+        o7.baslik = "Elektrik Faturasi"
+        o8.baslik = "Su Faturasi"
+        o9.baslik = "Kira"
+
+        tipListe.add(o7)
+        tipListe.add(o8)
+        tipListe.add(o9)
 
         listControl(tipListe)
 
