@@ -27,9 +27,9 @@ class TipViewHolder(itemView: View, itemOnClick: (position : Int) -> Unit) : Rec
     }
 
     fun bindData(context : Context, odemeTipi : OdemeTipi){
-        tv_tipBaslik.text = odemeTipi.baslik
-        tv_tipOdemePeriyodu.text = odemeTipi.periyod
-        tv_tipPeriyodOdemeGunu.text = odemeTipi.periyodGunu
+        tv_tipBaslik.text = odemeTipi.Baslik
+        tv_tipOdemePeriyodu.text = odemeTipi.Periyod
+        tv_tipPeriyodOdemeGunu.text = odemeTipi.PeriyodGunu
     }
 
 }

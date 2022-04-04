@@ -6,4 +6,131 @@
     android:layout_height="match_parent"
     tools:context=".YeniOdemeTipi">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/textInputLayoutBaslik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textColorHint="#433939"
+        android:hint="Ödeme Tipi Adı"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_odemeTipBaslik"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textViewDd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ödeme Periyodu Seçiniz:"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBaslik" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_weight=".28"
+        android:background="@drawable/bg_spinner"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutBaslik"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayoutBaslik"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDd">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:paddingStart="2dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:spinnerMode="dropdown"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:src="@drawable/drop" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPeriyod"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:hint="Periyot Günü"
+        android:minHeight="48dp"
+        android:textColorHint="#433939"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tv_odemeTipPeriyodGunu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_uyari"
+        android:layout_width="wrap_content"
+        android:textColor="@color/red"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Ödeme periyodu seçtiğinizden emin olun"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayoutPeriyod"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPeriyod" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_kaydet"
+        android:layout_width="0dp"
+        android:background="@drawable/custom_button_white"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Kaydet"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayoutPeriyod"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayoutPeriyod"
+        app:layout_constraintTop_toBottomOf="@+id/tv_uyari" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_white"
+        android:layout_marginTop="8dp"
+        android:text="Sil"
+        app:layout_constraintEnd_toEndOf="@+id/btn_kaydet"
+        app:layout_constraintStart_toStartOf="@+id/btn_kaydet"
+        app:layout_constraintTop_toBottomOf="@+id/btn_kaydet" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
