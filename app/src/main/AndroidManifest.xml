@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OdemeTakip">
         <activity
+            android:name=".TipDetayActivity"
+            android:exported="true" />
+        <activity
             android:name=".YeniOdemeTipi"
             android:exported="true" />
         <activity

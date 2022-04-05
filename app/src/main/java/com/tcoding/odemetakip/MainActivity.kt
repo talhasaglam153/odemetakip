@@ -71,8 +71,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun itemClick(position : Int){
-
-            Toast.makeText(this, "Id: ${tipListe.get(position).Id.toString()}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, TipDetayActivity::class.java)
+        intent.putExtra("odemeTipi",tipListe.get(position))
+        startActivity(intent)
     }
+
+
+
 
 }
