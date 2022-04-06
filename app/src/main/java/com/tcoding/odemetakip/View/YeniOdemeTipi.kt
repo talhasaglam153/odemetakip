@@ -1,4 +1,4 @@
-package com.tcoding.odemetakip
+package com.tcoding.odemetakip.View
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,12 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.RadioButton
 import android.widget.Toast
-import androidx.core.view.get
 import com.tcoding.odemetakip.OdemeTipi.OdemeTipi
+import com.tcoding.odemetakip.R
 import com.tcoding.odemetakip.databinding.ActivityYeniOdemeTipiBinding
-import java.text.FieldPosition
 
 class YeniOdemeTipi : AppCompatActivity() {
     lateinit var  binding : ActivityYeniOdemeTipiBinding
@@ -29,11 +27,21 @@ class YeniOdemeTipi : AppCompatActivity() {
         spinner()
 
         binding.btnKaydet.setOnClickListener {
-
             odemeTipi = OdemeTipi()
+            if(binding.tvOdemeTipBaslik.text.toString().isEmpty()){
+                Toast.makeText(this,"Lütfen Bir Ödeme Tipi Girdiğinizden Emin Olun", Toast.LENGTH_SHORT).show()
+            }else{
+
+
+
+
             odemeTipi!!.Baslik = binding.tvOdemeTipBaslik.text.toString()
-            odemeTipi!!.PeriyodGunu = binding.tvOdemeTipPeriyodGunu.text.toString()
-            odemeTipi!!.Periyod = odemePeriyod.get(odemePeriyodPosition)
+            odemeTipi?.PeriyodGunu = binding.tvOdemeTipPeriyodGunu.text.toString()
+            if(odemePeriyodPosition == 0){
+                odemeTipi?.PeriyodGunu = "Belirlenmedi"
+            }
+
+            odemeTipi?.Periyod = odemePeriyod.get(odemePeriyodPosition)
 
             val intent = Intent()
 
@@ -41,6 +49,7 @@ class YeniOdemeTipi : AppCompatActivity() {
 
             setResult(RESULT_OK, intent)
             finish()
+        }
 
         }
 
@@ -62,7 +71,8 @@ class YeniOdemeTipi : AppCompatActivity() {
 
         odemePeriyod = arrayListOf("Belirlenmedi", "Yıllık", "Aylık", "Haftalık")
 
-        binding.spinner.adapter = ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, odemePeriyod)
+        binding.spinner.adapter = ArrayAdapter<String>(this,
+            R.layout.support_simple_spinner_dropdown_item, odemePeriyod)
 
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {

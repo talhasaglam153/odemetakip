@@ -1,4 +1,4 @@
-package com.tcoding.odemetakip
+package com.tcoding.odemetakip.View
 
 import android.content.Context
 import android.view.View
@@ -6,8 +6,9 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.tcoding.odemetakip.OdemeTipi.OdemeTipi
+import com.tcoding.odemetakip.R
 
-class TipViewHolder(itemView: View, itemOnClick: (position : Int) -> Unit) : RecyclerView.ViewHolder(itemView) {
+class TipViewHolder(itemView: View, itemOnClick: (position : Int) -> Unit, odemeEkleClick: (position : Int)-> Unit) : RecyclerView.ViewHolder(itemView) {
 
     var tv_tipBaslik : TextView
     var tv_tipOdemePeriyodu : TextView
@@ -22,6 +23,10 @@ class TipViewHolder(itemView: View, itemOnClick: (position : Int) -> Unit) : Rec
 
         itemView.setOnClickListener {
             itemOnClick(adapterPosition)
+        }
+
+        btn_odemeEkle.setOnClickListener {
+            odemeEkleClick(adapterPosition)
         }
 
     }

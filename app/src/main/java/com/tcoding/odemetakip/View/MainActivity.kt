@@ -1,11 +1,10 @@
-package com.tcoding.odemetakip
+package com.tcoding.odemetakip.View
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,13 +27,21 @@ class MainActivity : AppCompatActivity() {
         tipListe = YapilacakLogic.tumOdemeTipleriniGetir(this)
         listControl(tipListe)
 
-        binding.rv.adapter = TipAdapter(this, tipListe, ::itemClick)
+        binding.rv.adapter = TipAdapter(this, tipListe, ::itemClick, ::odemeEkleClick)
 
         binding.btnYeniOdemeTipi.setOnClickListener {
             toYeniOdemeTipi()
         }
 
+
     }
+
+    fun odemeEkleClick(position: Int) {
+        val intent = Intent(this, TipDetayActivity::class.java)
+        intent.putExtra("odemeTipi",tipListe.get(position))
+        startActivity(intent)
+    }
+
 
     fun toYeniOdemeTipi(){
         val intent = Intent(this, YeniOdemeTipi::class.java)
@@ -53,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             YapilacakLogic.ekle(this, tip)
 
             tipListe = YapilacakLogic.tumOdemeTipleriniGetir(this)
-            binding.rv.adapter = TipAdapter(this, tipListe, ::itemClick)
+            binding.rv.adapter = TipAdapter(this, tipListe, ::itemClick, ::odemeEkleClick)
 
             listControl(tipListe)
             binding.rv.adapter!!.notifyDataSetChanged()

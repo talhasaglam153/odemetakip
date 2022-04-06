@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TipDetayActivity">
+    tools:context=".View.TipDetayActivity">
 
 
 
@@ -36,6 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:textAllCaps="true"
                 android:text="Elektrik Faturası"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -45,6 +46,7 @@
             <TextView
                 android:id="@+id/et_tipOdemePeriyodu"
                 android:layout_width="wrap_content"
+                android:textAllCaps="true"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
@@ -57,6 +59,7 @@
                 android:id="@+id/et_tipPeriyodOdemeGunu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAllCaps="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:text="3. Gün"
@@ -92,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"

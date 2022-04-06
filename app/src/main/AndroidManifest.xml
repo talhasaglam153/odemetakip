@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OdemeTakip">
         <activity
-            android:name=".TipDetayActivity"
+            android:name=".View.OdemeEkle2"
             android:exported="true" />
         <activity
-            android:name=".YeniOdemeTipi"
+            android:name=".View.YeniOdemeTipi"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".View.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".View.TipDetayActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
